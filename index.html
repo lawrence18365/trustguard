@@ -1,164 +1,611 @@
-<section id="pricing" class="pricing">
-    <div class="container">
-        <h2>Tailored Pricing Plans to Fit Your Needs</h2>
-        <div class="plans">
-            <div class="plan">
-                <h3>Starter</h3>
-                <div class="price">$50<span>/month</span></div>
-                <ul>
-                    <li>Automated review requests</li>
-                    <li>Basic review monitoring</li>
-                    <li>Analytics dashboard</li>
-                    <li>Email support</li>
-                </ul>
-                <a href="#contact" class="cta-button">Get Started</a>
-            </div>
-            <div class="plan">
-                <h3>Growth</h3>
-                <div class="price">$100<span>/month</span></div>
-                <ul>
-                    <li>All Starter features</li>
-                    <li>Social media integration</li>
-                    <li>Advanced review analytics</li>
-                    <li>Priority email support</li>
-                </ul>
-                <a href="#contact" class="cta-button">Get Started</a>
-            </div>
-            <div class="plan">
-                <h3>Premium</h3>
-                <div class="price">$150<span>/month</span></div>
-                <ul>
-                    <li>All Growth features</li>
-                    <li>Multi-location support</li>
-                    <li>Dedicated account manager</li>
-                    <li>24/7 phone support</li>
-                </ul>
-                <a href="#contact" class="cta-button">Get Started</a>
-            </div>
-        </div>
-        <div class="one-time-service">
-            <h3>One-Time Review Boost</h3>
-            <div class="price">AUD 300<span> (one-time fee)</span></div>
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>BrandBeacon - Fortify Your Digital Reputation</title>
+    <link href="https://fonts.googleapis.com/css2?family=Montserrat:wght@300;400;600;700&display=swap" rel="stylesheet">
+    <style>
+        :root {
+            --primary: #FF6B35;
+            --secondary: #004E89;
+            --accent: #FFD700;
+            --light: #FFFFFF;
+            --dark: #333333;
+            --gray: #F4F4F4;
+        }
+
+        * {
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
+        }
+
+        body, html {
+            font-family: 'Montserrat', sans-serif;
+            line-height: 1.6;
+            color: var(--dark);
+            background-color: var(--light);
+            scroll-behavior: smooth;
+        }
+
+        .container {
+            width: 90%;
+            max-width: 1200px;
+            margin: 0 auto;
+            padding: 0 20px;
+        }
+
+        header {
+            background-color: var(--secondary);
+            color: var(--light);
+            padding: 1rem 0;
+            position: fixed;
+            width: 100%;
+            top: 0;
+            z-index: 1000;
+            box-shadow: 0 2px 10px rgba(0,0,0,0.1);
+        }
+
+        nav {
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+        }
+
+        .logo {
+            font-size: 2rem;
+            font-weight: 700;
+            color: var(--light);
+            text-decoration: none;
+        }
+
+        nav ul {
+            display: flex;
+            list-style-type: none;
+        }
+
+        nav ul li {
+            margin-left: 30px;
+        }
+
+        nav ul li a {
+            color: var(--light);
+            text-decoration: none;
+            transition: color 0.3s ease;
+            font-weight: 600;
+            font-size: 1.1rem;
+        }
+
+        nav ul li a:hover {
+            color: var(--accent);
+        }
+
+        .hero {
+            background: linear-gradient(135deg, var(--secondary), var(--primary));
+            color: var(--light);
+            text-align: center;
+            padding: 150px 0 100px;
+            margin-top: 60px;
+        }
+
+        .hero h1 {
+            font-size: 3.5rem;
+            margin-bottom: 1rem;
+            line-height: 1.2;
+            animation: fadeInUp 1s ease-out;
+        }
+
+        .hero p {
+            font-size: 1.5rem;
+            margin-bottom: 2rem;
+            animation: fadeInUp 1s ease-out 0.5s both;
+        }
+
+        .cta-button {
+            display: inline-block;
+            background-color: var(--accent);
+            color: var(--secondary);
+            padding: 15px 40px;
+            text-decoration: none;
+            border-radius: 50px;
+            font-weight: 600;
+            transition: all 0.3s ease;
+            font-size: 1.2rem;
+            animation: fadeInUp 1s ease-out 1s both;
+        }
+
+        .cta-button:hover {
+            background-color: var(--light);
+            color: var(--primary);
+            transform: translateY(-3px);
+            box-shadow: 0 10px 20px rgba(0,0,0,0.1);
+        }
+
+        section {
+            padding: 100px 0;
+        }
+
+        h2 {
+            font-size: 2.5rem;
+            margin-bottom: 3rem;
+            text-align: center;
+            color: var(--secondary);
+        }
+
+        .features {
+            display: flex;
+            flex-wrap: wrap;
+            justify-content: space-between;
+            gap: 2rem;
+        }
+
+        .feature {
+            flex-basis: calc(33.333% - 2rem);
+            background-color: var(--light);
+            padding: 2rem;
+            border-radius: 10px;
+            box-shadow: 0 5px 15px rgba(0,0,0,0.1);
+            transition: all 0.3s ease;
+        }
+
+        .feature:hover {
+            transform: translateY(-10px);
+            box-shadow: 0 15px 30px rgba(0,0,0,0.2);
+        }
+
+        .feature h3 {
+            font-size: 1.8rem;
+            margin-bottom: 1rem;
+            color: var(--primary);
+        }
+
+        .feature p {
+            font-size: 1.1rem;
+            color: var(--dark);
+        }
+
+        .pricing {
+            background-color: var(--gray);
+        }
+
+        .plans {
+            display: flex;
+            flex-wrap: wrap;
+            justify-content: space-between;
+            gap: 2rem;
+        }
+
+        .plan {
+            flex-basis: calc(33.333% - 2rem);
+            background-color: var(--light);
+            padding: 3rem 2rem;
+            border-radius: 10px;
+            box-shadow: 0 5px 15px rgba(0,0,0,0.1);
+            transition: all 0.3s ease;
+            color: var(--dark);
+        }
+
+        .plan:hover {
+            transform: scale(1.05);
+            box-shadow: 0 15px 30px rgba(0,0,0,0.2);
+        }
+
+        .plan h3 {
+            font-size: 2rem;
+            margin-bottom: 1rem;
+            color: var(--primary);
+        }
+
+        .plan .price {
+            font-size: 3rem;
+            font-weight: 700;
+            margin-bottom: 2rem;
+            color: var(--secondary);
+        }
+
+        .plan ul {
+            list-style-type: none;
+            margin-bottom: 2rem;
+        }
+
+        .plan ul li {
+            margin-bottom: 1rem;
+            font-size: 1.1rem;
+        }
+
+        .plan .cta-button,
+        .one-time-service .cta-button {
+            width: 100%;
+            max-width: 200px;
+            margin: 0 auto;
+            display: block;
+            text-align: center;
+        }
+
+        .one-time-service {
+            background-color: var(--secondary);
+            color: var(--light);
+            padding: 3rem 2rem;
+            border-radius: 10px;
+            box-shadow: 0 5px 15px rgba(0,0,0,0.1);
+            margin-top: 2rem;
+            text-align: center;
+        }
+
+        .one-time-service h3 {
+            color: var(--accent);
+            font-size: 2rem;
+            margin-bottom: 1rem;
+        }
+
+        .one-time-service .price {
+            font-size: 2.5rem;
+            font-weight: 700;
+            margin-bottom: 1rem;
+            color: var(--accent);
+        }
+
+        .one-time-service ul {
+            list-style-type: none;
+            margin-bottom: 2rem;
+        }
+
+        .one-time-service ul li {
+            margin-bottom: 0.5rem;
+            font-size: 1.1rem;
+        }
+
+        .one-time-service .cta-button {
+            background-color: var(--accent);
+            color: var(--secondary);
+        }
+
+        .one-time-service .cta-button:hover {
+            background-color: var(--light);
+        }
+
+        form {
+            max-width: 600px;
+            margin: 0 auto;
+            background-color: var(--light);
+            padding: 3rem;
+            border-radius: 10px;
+            box-shadow: 0 5px 15px rgba(0,0,0,0.1);
+        }
+
+        input, textarea {
+            width: 100%;
+            padding: 15px;
+            margin-bottom: 1.5rem;
+            border: 1px solid #ddd;
+            border-radius: 5px;
+            font-family: 'Montserrat', sans-serif;
+            font-size: 1.1rem;
+        }
+
+        button {
+            background-color: var(--primary);
+            color: var(--light);
+            padding: 15px 30px;
+            border: none;
+            border-radius: 50px;
+            cursor: pointer;
+            font-weight: 600;
+            transition: all 0.3s ease;
+            font-family: 'Montserrat', sans-serif;
+            font-size: 1.2rem;
+            display: block;
+            width: 100%;
+        }
+
+        button:hover {
+            background-color: var(--accent);
+            color: var(--secondary);
+            transform: translateY(-3px);
+            box-shadow: 0 10px 20px rgba(0,0,0,0.1);
+        }
+
+        .stats {
+            text-align: center;
+            margin-top: 3rem;
+        }
+
+        .stat {
+            display: inline-block;
+            margin: 0 2rem;
+        }
+
+        .stat-number {
+            font-size: 3rem;
+            font-weight: 700;
+            color: var(--primary);
+        }
+
+        .stat-description {
+            font-size: 1.2rem;
+            color: var(--dark);
+        }
+
+        footer {
+            background-color: var(--secondary);
+            color: var(--light);
+            text-align: center;
+            padding: 2rem 0;
+            font-size: 1rem;
+        }
+
+        .testimonials {
+            background-color: var(--gray);
+            padding: 100px 0;
+        }
+
+        .testimonial {
+            background-color: var(--light);
+            padding: 2rem;
+            border-radius: 10px;
+            box-shadow: 0 5px 15px rgba(0,0,0,0.1);
+            margin-bottom: 2rem;
+        }
+
+        .testimonial-content {
+            font-style: italic;
+            margin-bottom: 1rem;
+        }
+
+        .testimonial-author {
+            font-weight: bold;
+            color: var(--primary);
+        }
+
+        .how-it-works {
+            padding: 100px 0;
+        }
+
+        .step {
+            display: flex;
+            align-items: center;
+            margin-bottom: 3rem;
+        }
+
+        .step-number {
+            font-size: 3rem;
+            font-weight: bold;
+            color: var(--primary);
+            margin-right: 2rem;
+        }
+
+        .step-content h3 {
+            font-size: 1.8rem;
+            margin-bottom: 1rem;
+            color: var(--secondary);
+        }
+
+        @keyframes fadeInUp {
+            from {
+                opacity: 0;
+                transform: translateY(20px);
+            }
+            to {
+                opacity: 1;
+                transform: translateY(0);
+            }
+        }
+
+        @media (max-width: 768px) {
+            .feature, .plan {
+                flex-basis: 100%;
+            }
+            nav ul {
+                display: none;
+            }
+            .hero h1 {
+                font-size: 2.5rem;
+            }
+            .hero p {
+                font-size: 1.2rem;
+            }
+            .stat {
+                display: block;
+                margin: 2rem 0;
+            }
+        }
+    </style>
+</head>
+<body>
+    <header>
+        <nav class="container">
+            <a href="#" class="logo">BrandBeacon</a>
             <ul>
-                <li>Review request links sent to past clients</li>
-                <li>Customized email templates</li>
-                <li>Follow-up reminders</li>
-                <li>Detailed reporting on campaign performance</li>
+                <li><a href="#features">Features</a></li>
+                <li><a href="#how-it-works">How It Works</a></li>
+                <li><a href="#pricing">Pricing</a></li>
+                <li><a href="#testimonials">Testimonials</a></li>
+                <li><a href="#contact" class="cta-button">Free Trial</a></li>
             </ul>
-            <a href="#contact" class="cta-button">Get Review Boost</a>
+        </nav>
+    </header>
+
+    <section class="hero">
+        <div class="container">
+            <h1>Fortify Your Digital Reputation</h1>
+            <p>Elevate Your Online Presence with Cutting-Edge Automation</p>
+            <a href="#contact" class="cta-button">Start Your 14-Day Free Trial</a>
         </div>
-    </div>
-</section>
-.pricing {
-    background-color: var(--gray);
-    padding: 100px 0;
-}
+    </section>
 
-.plans {
-    display: flex;
-    flex-wrap: wrap;
-    justify-content: space-between;
-    gap: 2rem;
-}
+    <section id="features">
+        <div class="container">
+            <h2>Why BrandBeacon is Your Ultimate Reputation Ally</h2>
+            <div class="features">
+                <div class="feature">
+                    <h3>Automate with Precision</h3>
+                    <p>Streamline your review collection process with our intelligent automation system. We conduct daily scans for over 75,000 potential threats to your online reputation.</p>
+                </div>
+                <div class="feature">
+                    <h3>Analyze with Depth</h3>
+                    <p>Gain unparalleled insights into customer sentiment with our advanced analysis tools, potentially increasing your conversion rates by up to 270%.</p>
+                </div>
+                <div class="feature">
+                    <h3>Act with Intelligence</h3>
+                    <p>Respond effectively to reviews using our AI-powered suggestion engine, engaging customers and building trust.</p>
+                </div>
+            </div>
+        </div>
+    </section>
 
-.plan {
-    flex-basis: calc(33.333% - 2rem);
-    background-color: var(--light);
-    padding: 3rem 2rem;
-    border-radius: 10px;
-    box-shadow: 0 5px 15px rgba(0,0,0,0.1);
-    transition: all 0.3s ease;
-    color: var(--dark);
-}
+    <section id="how-it-works" class="how-it-works">
+        <div class="container">
+            <h2>How BrandBeacon Works</h2>
+            <div class="step">
+                <div class="step-number">1</div>
+                <div class="step-content">
+                    <h3>Connect Your Platforms</h3>
+                    <p>Easily integrate BrandBeacon with your existing review platforms and social media accounts.</p>
+                </div>
+            </div>
+            <div class="step">
+                <div class="step-number">2</div>
+                <div class="step-content">
+                    <h3>Monitor and Analyze</h3>
+                    <p>Our AI-powered system continuously monitors your online presence, analyzing customer sentiment and identifying potential issues.</p>
+                </div>
+            </div>
+            <div class="step">
+                <div class="step-number">3</div>
+                <div class="step-content">
+                    <h3>Respond and Improve</h3>
+                    <p>Receive actionable insights and AI-generated response suggestions to effectively manage your online reputation.</p>
+                </div>
+            </div>
+        </div>
+    </section>
 
-.plan:hover {
-    transform: scale(1.05);
-    box-shadow: 0 15px 30px rgba(0,0,0,0.2);
-}
+    <section id="pricing" class="pricing">
+        <div class="container">
+            <h2>Tailored Pricing Plans to Fit Your Needs</h2>
+            <div class="plans">
+                <div class="plan">
+                    <h3>Starter</h3>
+                    <div class="price">$50<span>/month</span></div>
+                    <ul>
+                        <li>Automated review requests</li>
+<li>Basic review monitoring</li>
+                        <li>Analytics dashboard</li>
+                        <li>Email support</li>
+                    </ul>
+                    <a href="#contact" class="cta-button">Get Started</a>
+                </div>
+                <div class="plan">
+                    <h3>Growth</h3>
+                    <div class="price">$100<span>/month</span></div>
+                    <ul>
+                        <li>All Starter features</li>
+                        <li>Social media integration</li>
+                        <li>Advanced review analytics</li>
+                        <li>Priority email support</li>
+                    </ul>
+                    <a href="#contact" class="cta-button">Get Started</a>
+                </div>
+                <div class="plan">
+                    <h3>Premium</h3>
+                    <div class="price">$150<span>/month</span></div>
+                    <ul>
+                        <li>All Growth features</li>
+                        <li>Multi-location support</li>
+                        <li>Dedicated account manager</li>
+                        <li>24/7 phone support</li>
+                    </ul>
+                    <a href="#contact" class="cta-button">Get Started</a>
+                </div>
+            </div>
+            <div class="one-time-service">
+                <h3>One-Time Review Boost</h3>
+                <div class="price">AUD 300<span> (one-time fee)</span></div>
+                <ul>
+                    <li>Review request links sent to past clients</li>
+                    <li>Customized email templates</li>
+                    <li>Follow-up reminders</li>
+                    <li>Detailed reporting on campaign performance</li>
+                </ul>
+                <a href="#contact" class="cta-button">Get Review Boost</a>
+            </div>
+        </div>
+    </section>
 
-.plan h3 {
-    font-size: 2rem;
-    margin-bottom: 1rem;
-    color: var(--primary);
-}
+    <section id="testimonials" class="testimonials">
+        <div class="container">
+            <h2>What Our Clients Say</h2>
+            <div class="testimonial">
+                <p class="testimonial-content">"BrandBeacon has been a game-changer for our business. We've seen a 40% increase in positive reviews since we started using their platform."</p>
+                <p class="testimonial-author">- Sarah Johnson, CEO of TechStart Inc.</p>
+            </div>
+            <div class="testimonial">
+                <p class="testimonial-content">"The insights we've gained from BrandBeacon's analytics have helped us improve our customer service dramatically. It's like having a team of reputation experts working for us 24/7."</p>
+                <p class="testimonial-author">- Mike Thompson, Owner of Thompson's Diner</p>
+            </div>
+            <div class="testimonial">
+                <p class="testimonial-content">"I was skeptical at first, but BrandBeacon's AI-powered response suggestions have saved us countless hours and improved our customer engagement."</p>
+                <p class="testimonial-author">- Lisa Chen, Marketing Director at GreenLeaf Solutions</p>
+            </div>
+        </div>
+    </section>
 
-.plan .price {
-    font-size: 3rem;
-    font-weight: 700;
-    margin-bottom: 2rem;
-    color: var(--secondary);
-}
+    <section id="stats">
+        <div class="container">
+            <h2>BrandBeacon by the Numbers</h2>
+            <div class="stats">
+                <div class="stat">
+                    <div class="stat-number">93%</div>
+                    <div class="stat-description">of consumers read online reviews before purchasing</div>
+                </div>
+                <div class="stat">
+                    <div class="stat-number">75,000+</div>
+                    <div class="stat-description">potential threats scanned daily</div>
+                </div>
+                <div class="stat">
+                    <div class="stat-number">270%</div>
+                    <div class="stat-description">potential increase in conversion rates</div>
+                </div>
+            </div>
+        </div>
+    </section>
 
-.plan ul {
-    list-style-type: none;
-    margin-bottom: 2rem;
-}
+    <section id="contact">
+        <div class="container">
+            <h2>Ready to Illuminate Your Online Reputation?</h2>
+            <form id="leadForm">
+                <input type="text" name="name" placeholder="Business Name" required>
+                <input type="email" name="email" placeholder="Email Address" required>
+                <input type="tel" name="phone" placeholder="Phone Number">
+                <textarea name="message" placeholder="How can we help you improve your online reputation?" rows="4"></textarea>
+                <button type="submit">Start Your 14-Day Free Trial</button>
+            </form>
+        </div>
+    </section>
 
-.plan ul li {
-    margin-bottom: 1rem;
-    font-size: 1.1rem;
-}
+    <footer>
+        <div class="container">
+            <p>&copy; 2024 BrandBeacon. All rights reserved.</p>
+            <nav>
+                <ul>
+                    <li><a href="#features">Features</a></li>
+                    <li><a href="#how-it-works">How It Works</a></li>
+                    <li><a href="#pricing">Pricing</a></li>
+                    <li><a href="#testimonials">Testimonials</a></li>
+                    <li><a href="#contact">Contact</a></li>
+                </ul>
+            </nav>
+            <p>BrandBeacon: Securing your digital future, one review at a time.</p>
+        </div>
+    </footer>
 
-.plan .cta-button,
-.one-time-service .cta-button {
-    width: 100%;
-    max-width: 200px;
-    margin: 0 auto;
-    display: block;
-    background-color: var(--accent);
-    color: var(--secondary);
-    padding: 15px 30px;
-    text-decoration: none;
-    border-radius: 50px;
-    font-weight: 600;
-    transition: all 0.3s ease;
-    font-size: 1.2rem;
-    text-align: center;
-}
-
-.plan .cta-button:hover,
-.one-time-service .cta-button:hover {
-    background-color: var(--primary);
-    color: var(--light);
-    transform: translateY(-3px);
-    box-shadow: 0 10px 20px rgba(0,0,0,0.1);
-}
-
-.one-time-service {
-    background-color: var(--secondary);
-    color: var(--light);
-    padding: 3rem 2rem;
-    border-radius: 10px;
-    box-shadow: 0 5px 15px rgba(0,0,0,0.1);
-    margin-top: 2rem;
-    text-align: center;
-}
-
-.one-time-service h3 {
-    color: var(--accent);
-    font-size: 2rem;
-    margin-bottom: 1rem;
-}
-
-.one-time-service .price {
-    font-size: 2.5rem;
-    font-weight: 700;
-    margin-bottom: 1rem;
-    color: var(--accent);
-}
-
-.one-time-service ul {
-    list-style-type: none;
-    margin-bottom: 2rem;
-}
-
-.one-time-service ul li {
-    margin-bottom: 0.5rem;
-    font-size: 1.1rem;
-}
-
-@media (max-width: 768px) {
-    .plan, .one-time-service {
-        flex-basis: 100%;
-    }
-}
+    <script>
+        document.getElementById('leadForm').addEventListener('submit', function(e) {
+            e.preventDefault();
+            alert('Thank you for your interest! We will be in touch shortly to start your free trial.');
+            this.reset();
+        });
+    </script>
+</body>
+</html>
