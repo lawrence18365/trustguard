@@ -12,6 +12,7 @@
             --accent: #FFD700;
             --light: #FFFFFF;
             --dark: #333333;
+            --gray: #F4F4F4;
         }
 
         * {
@@ -165,8 +166,7 @@
         }
 
         .pricing {
-            background-color: var(--secondary);
-            color: var(--light);
+            background-color: var(--gray);
         }
 
         .plans {
@@ -284,6 +284,52 @@
             font-size: 1rem;
         }
 
+        .testimonials {
+            background-color: var(--gray);
+            padding: 100px 0;
+        }
+
+        .testimonial {
+            background-color: var(--light);
+            padding: 2rem;
+            border-radius: 10px;
+            box-shadow: 0 5px 15px rgba(0,0,0,0.1);
+            margin-bottom: 2rem;
+        }
+
+        .testimonial-content {
+            font-style: italic;
+            margin-bottom: 1rem;
+        }
+
+        .testimonial-author {
+            font-weight: bold;
+            color: var(--primary);
+        }
+
+        .how-it-works {
+            padding: 100px 0;
+        }
+
+        .step {
+            display: flex;
+            align-items: center;
+            margin-bottom: 3rem;
+        }
+
+        .step-number {
+            font-size: 3rem;
+            font-weight: bold;
+            color: var(--primary);
+            margin-right: 2rem;
+        }
+
+        .step-content h3 {
+            font-size: 1.8rem;
+            margin-bottom: 1rem;
+            color: var(--secondary);
+        }
+
         @keyframes fadeInUp {
             from {
                 opacity: 0;
@@ -321,7 +367,9 @@
             <a href="#" class="logo">BrandBeacon</a>
             <ul>
                 <li><a href="#features">Features</a></li>
+                <li><a href="#how-it-works">How It Works</a></li>
                 <li><a href="#pricing">Pricing</a></li>
+                <li><a href="#testimonials">Testimonials</a></li>
                 <li><a href="#contact" class="cta-button">Free Trial</a></li>
             </ul>
         </nav>
@@ -355,15 +403,30 @@
         </div>
     </section>
 
-    <section id="why-choose">
+    <section id="how-it-works" class="how-it-works">
         <div class="container">
-            <h2>Why Choose BrandBeacon?</h2>
-            <ul>
-                <li>Proactive Protection: Safeguard your reputation before issues arise</li>
-                <li>Time-Saving Automation: Focus on your business while we manage your online presence</li>
-                <li>Valuable Customer Insights: Gain deep understanding of your customers to improve your services</li>
-                <li>Increased Conversions: Turn positive reviews into powerful marketing tools</li>
-            </ul>
+            <h2>How BrandBeacon Works</h2>
+            <div class="step">
+                <div class="step-number">1</div>
+                <div class="step-content">
+                    <h3>Connect Your Platforms</h3>
+                    <p>Easily integrate BrandBeacon with your existing review platforms and social media accounts.</p>
+                </div>
+            </div>
+            <div class="step">
+                <div class="step-number">2</div>
+                <div class="step-content">
+                    <h3>Monitor and Analyze</h3>
+                    <p>Our AI-powered system continuously monitors your online presence, analyzing customer sentiment and identifying potential issues.</p>
+                </div>
+            </div>
+            <div class="step">
+                <div class="step-number">3</div>
+                <div class="step-content">
+                    <h3>Respond and Improve</h3>
+                    <p>Receive actionable insights and AI-generated response suggestions to effectively manage your online reputation.</p>
+                </div>
+            </div>
         </div>
     </section>
 
@@ -378,6 +441,7 @@
                         <li>Automated review requests</li>
                         <li>Basic review monitoring</li>
                         <li>Analytics dashboard</li>
+                        <li>Email support</li>
                     </ul>
                     <a href="#contact" class="cta-button">Get Started</a>
                 </div>
@@ -388,6 +452,7 @@
                         <li>All Starter features</li>
                         <li>Social media integration</li>
                         <li>Advanced review analytics</li>
+                        <li>Priority email support</li>
                     </ul>
                     <a href="#contact" class="cta-button">Get Started</a>
                 </div>
@@ -398,9 +463,28 @@
                         <li>All Growth features</li>
                         <li>Multi-location support</li>
                         <li>Dedicated account manager</li>
+                        <li>24/7 phone support</li>
                     </ul>
                     <a href="#contact" class="cta-button">Get Started</a>
                 </div>
+            </div>
+        </div>
+    </section>
+
+    <section id="testimonials" class="testimonials">
+        <div class="container">
+            <h2>What Our Clients Say</h2>
+            <div class="testimonial">
+                <p class="testimonial-content">"BrandBeacon has been a game-changer for our business. We've seen a 40% increase in positive reviews since we started using their platform."</p>
+                <p class="testimonial-author">- Sarah Johnson, CEO of TechStart Inc.</p>
+            </div>
+            <div class="testimonial">
+                <p class="testimonial-content">"The insights we've gained from BrandBeacon's analytics have helped us improve our customer service dramatically. It's like having a team of reputation experts working for us 24/7."</p>
+                <p class="testimonial-author">- Mike Thompson, Owner of Thompson's Diner</p>
+            </div>
+            <div class="testimonial">
+                <p class="testimonial-content">"I was skeptical at first, but BrandBeacon's AI-powered response suggestions have saved us countless hours and improved our customer engagement."</p>
+                <p class="testimonial-author">- Lisa Chen, Marketing Director at GreenLeaf Solutions</p>
             </div>
         </div>
     </section>
@@ -427,7 +511,7 @@
 
     <section id="contact">
         <div class="container">
-            <h2>Illuminate Your Online Reputation</h2>
+            <h2>Ready to Illuminate Your Online Reputation?</h2>
             <form id="leadForm">
                 <input type="text" name="name" placeholder="Business Name" required>
                 <input type="email" name="email" placeholder="Email Address" required>
@@ -440,6 +524,16 @@
 
     <footer>
         <div class="container">
+            <p>&copy; 2024 BrandBeacon. All rights reserved.</p>
+            <nav>
+                <ul>
+                    <li><a href="#features">Features</a></li>
+                    <li><a href="#how-it-works">How It Works</a></li>
+                    <li><a href="#pricing">Pricing</a></li>
+                    <li><a href="#testimonials">Testimonials</a></li>
+                    <li><a href="#contact">Contact</a></li>
+                </ul>
+            </nav>
             <p>BrandBeacon: Securing your digital future, one review at a time.</p>
         </div>
     </footer>
