@@ -3,21 +3,15 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>TrustGuard - Elevate Your Online Reputation</title>
+    <title>BrandBeacon - Fortify Your Digital Reputation</title>
+    <link href="https://fonts.googleapis.com/css2?family=Montserrat:wght@300;400;600;700&display=swap" rel="stylesheet">
     <style>
-        @font-face {
-            font-family: 'Kamerik205';
-            src: url('kamerik205-heavy-webfont.woff2') format('woff2');
-            font-weight: 900;
-            font-style: normal;
-            font-display: swap;
-        }
-
         :root {
-            --primary: #2C3E50;
-            --secondary: #34495E;
-            --accent: #3498DB;
-            --light: #ECF0F1;
+            --primary: #FF6B35;
+            --secondary: #004E89;
+            --accent: #FFD700;
+            --light: #FFFFFF;
+            --dark: #333333;
         }
 
         * {
@@ -27,9 +21,9 @@
         }
 
         body, html {
-            font-family: 'Kamerik205', Arial, sans-serif;
+            font-family: 'Montserrat', sans-serif;
             line-height: 1.6;
-            color: var(--primary);
+            color: var(--dark);
             background-color: var(--light);
             scroll-behavior: smooth;
         }
@@ -42,7 +36,7 @@
         }
 
         header {
-            background-color: var(--primary);
+            background-color: var(--secondary);
             color: var(--light);
             padding: 1rem 0;
             position: fixed;
@@ -60,7 +54,7 @@
 
         .logo {
             font-size: 2rem;
-            font-weight: 900;
+            font-weight: 700;
             color: var(--light);
             text-decoration: none;
         }
@@ -78,7 +72,7 @@
             color: var(--light);
             text-decoration: none;
             transition: color 0.3s ease;
-            font-weight: 900;
+            font-weight: 600;
             font-size: 1.1rem;
         }
 
@@ -87,7 +81,7 @@
         }
 
         .hero {
-            background: linear-gradient(135deg, var(--primary), var(--secondary));
+            background: linear-gradient(135deg, var(--secondary), var(--primary));
             color: var(--light);
             text-align: center;
             padding: 150px 0 100px;
@@ -95,7 +89,7 @@
         }
 
         .hero h1 {
-            font-size: 4rem;
+            font-size: 3.5rem;
             margin-bottom: 1rem;
             line-height: 1.2;
             animation: fadeInUp 1s ease-out;
@@ -110,11 +104,11 @@
         .cta-button {
             display: inline-block;
             background-color: var(--accent);
-            color: var(--light);
+            color: var(--secondary);
             padding: 15px 40px;
             text-decoration: none;
             border-radius: 50px;
-            font-weight: 900;
+            font-weight: 600;
             transition: all 0.3s ease;
             font-size: 1.2rem;
             animation: fadeInUp 1s ease-out 1s both;
@@ -132,9 +126,10 @@
         }
 
         h2 {
-            font-size: 3rem;
+            font-size: 2.5rem;
             margin-bottom: 3rem;
             text-align: center;
+            color: var(--secondary);
         }
 
         .features {
@@ -146,7 +141,7 @@
 
         .feature {
             flex-basis: calc(33.333% - 2rem);
-            background-color: white;
+            background-color: var(--light);
             padding: 2rem;
             border-radius: 10px;
             box-shadow: 0 5px 15px rgba(0,0,0,0.1);
@@ -166,7 +161,7 @@
 
         .feature p {
             font-size: 1.1rem;
-            color: var(--secondary);
+            color: var(--dark);
         }
 
         .pricing {
@@ -176,18 +171,19 @@
 
         .plans {
             display: flex;
+            flex-wrap: wrap;
             justify-content: space-between;
             gap: 2rem;
         }
 
         .plan {
             flex-basis: calc(33.333% - 2rem);
-            background-color: white;
+            background-color: var(--light);
             padding: 3rem 2rem;
             border-radius: 10px;
             box-shadow: 0 5px 15px rgba(0,0,0,0.1);
             transition: all 0.3s ease;
-            color: var(--primary);
+            color: var(--dark);
         }
 
         .plan:hover {
@@ -198,13 +194,14 @@
         .plan h3 {
             font-size: 2rem;
             margin-bottom: 1rem;
-            color: var(--accent);
+            color: var(--primary);
         }
 
         .plan .price {
             font-size: 3rem;
-            font-weight: 900;
+            font-weight: 700;
             margin-bottom: 2rem;
+            color: var(--secondary);
         }
 
         .plan ul {
@@ -220,7 +217,7 @@
         form {
             max-width: 600px;
             margin: 0 auto;
-            background-color: white;
+            background-color: var(--light);
             padding: 3rem;
             border-radius: 10px;
             box-shadow: 0 5px 15px rgba(0,0,0,0.1);
@@ -232,29 +229,59 @@
             margin-bottom: 1.5rem;
             border: 1px solid #ddd;
             border-radius: 5px;
-            font-family: 'Kamerik205', Arial, sans-serif;
+            font-family: 'Montserrat', sans-serif;
             font-size: 1.1rem;
         }
 
         button {
-            background-color: var(--accent);
+            background-color: var(--primary);
             color: var(--light);
             padding: 15px 30px;
             border: none;
             border-radius: 50px;
             cursor: pointer;
-            font-weight: 900;
+            font-weight: 600;
             transition: all 0.3s ease;
-            font-family: 'Kamerik205', Arial, sans-serif;
+            font-family: 'Montserrat', sans-serif;
             font-size: 1.2rem;
             display: block;
             width: 100%;
         }
 
         button:hover {
-            background-color: var(--primary);
+            background-color: var(--accent);
+            color: var(--secondary);
             transform: translateY(-3px);
             box-shadow: 0 10px 20px rgba(0,0,0,0.1);
+        }
+
+        .stats {
+            text-align: center;
+            margin-top: 3rem;
+        }
+
+        .stat {
+            display: inline-block;
+            margin: 0 2rem;
+        }
+
+        .stat-number {
+            font-size: 3rem;
+            font-weight: 700;
+            color: var(--primary);
+        }
+
+        .stat-description {
+            font-size: 1.2rem;
+            color: var(--dark);
+        }
+
+        footer {
+            background-color: var(--secondary);
+            color: var(--light);
+            text-align: center;
+            padding: 2rem 0;
+            font-size: 1rem;
         }
 
         @keyframes fadeInUp {
@@ -276,10 +303,14 @@
                 display: none;
             }
             .hero h1 {
-                font-size: 3rem;
+                font-size: 2.5rem;
             }
             .hero p {
                 font-size: 1.2rem;
+            }
+            .stat {
+                display: block;
+                margin: 2rem 0;
             }
         }
     </style>
@@ -287,7 +318,7 @@
 <body>
     <header>
         <nav class="container">
-            <a href="#" class="logo">TrustGuard</a>
+            <a href="#" class="logo">BrandBeacon</a>
             <ul>
                 <li><a href="#features">Features</a></li>
                 <li><a href="#pricing">Pricing</a></li>
@@ -298,27 +329,27 @@
 
     <section class="hero">
         <div class="container">
-            <h1>Elevate Your Online Reputation</h1>
-            <p>Automated review management for modern businesses</p>
-            <a href="#contact" class="cta-button">Start Your Free Trial</a>
+            <h1>Fortify Your Digital Reputation</h1>
+            <p>Elevate Your Online Presence with Cutting-Edge Automation</p>
+            <a href="#contact" class="cta-button">Start Your 14-Day Free Trial</a>
         </div>
     </section>
 
     <section id="features">
         <div class="container">
-            <h2>Why Choose TrustGuard?</h2>
+            <h2>Why BrandBeacon is Your Ultimate Reputation Ally</h2>
             <div class="features">
                 <div class="feature">
-                    <h3>Automate</h3>
-                    <p>Streamline review collection with smart automation</p>
+                    <h3>Automate with Precision</h3>
+                    <p>Streamline your review collection process with our intelligent automation system. We conduct daily scans for over 75,000 potential threats.</p>
                 </div>
                 <div class="feature">
-                    <h3>Analyze</h3>
-                    <p>Gain insights with advanced sentiment analysis</p>
+                    <h3>Analyze with Depth</h3>
+                    <p>Gain unparalleled insights into customer sentiment with our advanced analysis tools, increasing conversion rates by up to 270%.</p>
                 </div>
                 <div class="feature">
-                    <h3>Act</h3>
-                    <p>Respond effectively with AI-powered suggestions</p>
+                    <h3>Act with Intelligence</h3>
+                    <p>Respond effectively to reviews using our AI-powered suggestion engine, engaging customers and building trust.</p>
                 </div>
             </div>
         </div>
@@ -326,7 +357,7 @@
 
     <section id="pricing" class="pricing">
         <div class="container">
-            <h2>Pricing Plans</h2>
+            <h2>Tailored Pricing Plans to Fit Your Needs</h2>
             <div class="plans">
                 <div class="plan">
                     <h3>Starter</h3>
@@ -362,23 +393,50 @@
         </div>
     </section>
 
+    <section id="stats">
+        <div class="container">
+            <h2>BrandBeacon by the Numbers</h2>
+            <div class="stats">
+                <div class="stat">
+                    <div class="stat-number">93%</div>
+                    <div class="stat-description">of consumers read online reviews before purchasing</div>
+                </div>
+                <div class="stat">
+                    <div class="stat-number">75,000+</div>
+                    <div class="stat-description">potential threats scanned daily</div>
+                </div>
+                <div class="stat">
+                    <div class="stat-number">270%</div>
+                    <div class="stat-description">potential increase in conversion rates</div>
+                </div>
+            </div>
+        </div>
+    </section>
+
     <section id="contact">
         <div class="container">
-            <h2>Start Your 14-Day Free Trial</h2>
+            <h2>Experience the BrandBeacon Advantage</h2>
             <form id="leadForm">
                 <input type="text" name="name" placeholder="Business Name" required>
                 <input type="email" name="email" placeholder="Email Address" required>
                 <input type="tel" name="phone" placeholder="Phone Number">
                 <textarea name="message" placeholder="How can we help you improve your online reputation?" rows="4"></textarea>
-                <button type="submit">Get Started</button>
+                <button type="submit">Start Your 14-Day Free Trial</button>
             </form>
         </div>
     </section>
 
+    <footer>
+        <div class="container">
+            <p>BrandBeacon: Securing your digital future, one review at a time.</p>
+            <p>Citations: [1] Professional Writer, [2] BrandBeacon EU, [3] Conversion Fanatics, [4] BrandBeacon.com, [5] ResearchGate</p>
+        </div>
+    </footer>
+
     <script>
         document.getElementById('leadForm').addEventListener('submit', function(e) {
             e.preventDefault();
-            alert('Thank you for your interest! We will be in touch shortly.');
+            alert('Thank you for your interest! We will be in touch shortly to start your free trial.');
             this.reset();
         });
     </script>
