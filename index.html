@@ -9,7 +9,9 @@
         :root {
             --primary: #3498db;
             --secondary: #2c3e50;
-            --light: #f5f5f5;
+            --accent: #e74c3c;
+            --light: #ecf0f1;
+            --dark: #34495e;
             --text: #333333;
         }
 
@@ -40,6 +42,7 @@
             width: 100%;
             top: 0;
             z-index: 1000;
+            box-shadow: 0 2px 5px rgba(0,0,0,0.1);
         }
 
         nav {
@@ -116,8 +119,8 @@
             margin: 0 auto 2rem;
         }
 
-        main {
-            padding: 50px 0;
+        main section {
+            padding: 80px 0;
         }
 
         h2 {
@@ -127,15 +130,13 @@
             margin-bottom: 2rem;
         }
 
-        .features, .steps, .testimonials {
-            display: flex;
-            flex-wrap: wrap;
-            justify-content: space-between;
+        .feature-grid, .steps-grid {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(250px, 1fr));
             gap: 2rem;
         }
 
         .feature-card, .step-card, .testimonial-card {
-            flex-basis: calc(33.333% - 1.33rem);
             background-color: #fff;
             padding: 2rem;
             border-radius: 10px;
@@ -143,7 +144,7 @@
             transition: transform 0.3s ease, box-shadow 0.3s ease;
         }
 
-        .feature-card:hover, .step-card:hover, .testimonial-card:hover {
+        .feature-card:hover, .step-card:hover {
             transform: translateY(-5px);
             box-shadow: 0 6px 12px rgba(0,0,0,0.15);
         }
@@ -154,31 +155,16 @@
             font-size: 1.2rem;
         }
 
-        .feature-card p, .step-card p, .testimonial-card p {
-            font-size: 0.9rem;
-        }
-
-        .testimonial-card cite {
-            display: block;
-            margin-top: 1rem;
-            font-style: normal;
-            font-weight: 600;
-            color: var(--primary);
-        }
-
-        @media (max-width: 768px) {
-            nav ul {
-                display: none;
-            }
-            .hero h1 {
-                font-size: 2rem;
-            }
-            .hero p {
-                font-size: 1rem;
-            }
-            .feature-card, .step-card, .testimonial-card {
-                flex-basis: 100%;
-            }
+        .step-number {
+            display: inline-block;
+            width: 30px;
+            height: 30px;
+            background-color: var(--primary);
+            color: var(--light);
+            border-radius: 50%;
+            text-align: center;
+            line-height: 30px;
+            margin-bottom: 1rem;
         }
     </style>
 </head>
@@ -201,30 +187,33 @@
         </nav>
     </header>
 
-    <section class="hero">
-        <div class="container">
-            <h1>Restoring Trust for Small and Medium Enterprises</h1>
-            <p>We help SMEs struggling with bad reviews regain trust and build a positive online reputation. Our AI-powered solution automates review management, boosts positive feedback, and provides valuable customer insights.</p>
-            <a href="#contact" class="cta-button">Schedule a Demo</a>
-        </div>
-    </section>
-
     <main>
+        <section class="hero">
+            <div class="container">
+                <h1>Restore Trust and Boost Your Online Reputation</h1>
+                <p>ReviewGate helps SMEs overcome bad reviews, automate reputation management, and gain valuable customer insights.</p>
+                <a href="#contact" class="cta-button">Start Your Free Trial</a>
+            </div>
+        </section>
+
         <section id="features">
             <div class="container">
                 <h2>What We Do</h2>
-                <div class="features">
+                <div class="feature-grid">
                     <div class="feature-card">
+                        <i class="icon-boost"></i>
                         <h3>Boost Reviews</h3>
-                        <p>Automate the collection and management of positive reviews to enhance your online reputation.</p>
+                        <p>Automate positive review collection and management to enhance your online reputation.</p>
                     </div>
                     <div class="feature-card">
+                        <i class="icon-manage"></i>
                         <h3>Manage Reviews Automatically</h3>
                         <p>Address bad reviews promptly using our AI-powered system, minimizing negative impact.</p>
                     </div>
                     <div class="feature-card">
+                        <i class="icon-analytics"></i>
                         <h3>CRM and Analytics</h3>
-                        <p>Use comprehensive analytics to understand and improve customer feedback, gaining valuable insights for business growth.</p>
+                        <p>Gain valuable insights for business growth through comprehensive customer feedback analysis.</p>
                     </div>
                 </div>
             </div>
@@ -232,17 +221,20 @@
 <section id="how-it-works">
             <div class="container">
                 <h2>How ReviewGate Works</h2>
-                <div class="steps">
+                <div class="steps-grid">
                     <div class="step-card">
-                        <h3>1. Automate Review Collection</h3>
+                        <span class="step-number">1</span>
+                        <h3>Automate Review Collection</h3>
                         <p>Connect your review platforms and social media accounts to our system effortlessly.</p>
                     </div>
                     <div class="step-card">
-                        <h3>2. Monitor and Analyze Feedback</h3>
+                        <span class="step-number">2</span>
+                        <h3>Monitor and Analyze Feedback</h3>
                         <p>Our AI continuously monitors reviews, providing real-time sentiment analysis and actionable insights.</p>
                     </div>
                     <div class="step-card">
-                        <h3>3. Respond and Improve</h3>
+                        <span class="step-number">3</span>
+                        <h3>Respond and Improve</h3>
                         <p>Generate AI-powered response suggestions, allowing you to engage customers effectively and build lasting trust.</p>
                     </div>
                 </div>
@@ -252,7 +244,7 @@
         <section id="testimonials">
             <div class="container">
                 <h2>What Our Clients Say</h2>
-                <div class="testimonials">
+                <div class="testimonial-slider">
                     <div class="testimonial-card">
                         <p>"ReviewGate has been a game-changer for our business. We've seen a 40% increase in positive reviews since we started using their platform."</p>
                         <cite>- Sarah Johnson, CEO of TechStart Inc.</cite>
@@ -281,20 +273,53 @@
 
     <footer>
         <div class="container">
+            <div class="footer-content">
+                <div class="footer-logo">
+                    <svg viewBox="0 0 40 40" fill="none" xmlns="http://www.w3.org/2000/svg">
+                        <rect width="40" height="40" rx="8" fill="#3498db"/>
+                        <path d="M10 20L16 26L30 12" stroke="#FFFFFF" stroke-width="4" stroke-linecap="round" stroke-linejoin="round"/>
+                    </svg>
+                    ReviewGate
+                </div>
+                <nav>
+                    <ul>
+                        <li><a href="#features">Features</a></li>
+                        <li><a href="#how-it-works">How It Works</a></li>
+                        <li><a href="#testimonials">Testimonials</a></li>
+                        <li><a href="#contact">Contact</a></li>
+                    </ul>
+                </nav>
+                <div class="social-links">
+                    <a href="#" class="social-icon">Facebook</a>
+                    <a href="#" class="social-icon">Twitter</a>
+                    <a href="#" class="social-icon">LinkedIn</a>
+                </div>
+            </div>
             <p>&copy; 2024 ReviewGate. All rights reserved.</p>
-            <nav>
-                <ul>
-                    <li><a href="#features">Features</a></li>
-                    <li><a href="#how-it-works">How It Works</a></li>
-                    <li><a href="#testimonials">Testimonials</a></li>
-                    <li><a href="#contact">Contact</a></li>
-                </ul>
-            </nav>
-            <p>ReviewGate: Securing your digital future, one review at a time.</p>
         </div>
     </footer>
-
     <style>
+        .testimonial-slider {
+            display: flex;
+            overflow-x: auto;
+            scroll-snap-type: x mandatory;
+            gap: 2rem;
+            padding-bottom: 1rem;
+        }
+
+        .testimonial-card {
+            flex: 0 0 100%;
+            scroll-snap-align: start;
+        }
+
+        .testimonial-card cite {
+            display: block;
+            margin-top: 1rem;
+            font-style: normal;
+            font-weight: 600;
+            color: var(--primary);
+        }
+
         form {
             display: flex;
             flex-direction: column;
@@ -314,36 +339,61 @@
             background-color: var(--secondary);
             color: var(--light);
             padding: 2rem 0;
-            text-align: center;
         }
 
-        footer nav ul {
-            justify-content: center;
-            margin: 1rem 0;
+        .footer-content {
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+            margin-bottom: 1rem;
         }
 
-        footer nav ul li {
-            margin: 0 10px;
+        .footer-logo {
+            display: flex;
+            align-items: center;
+            font-size: 1.2rem;
+            font-weight: 700;
         }
 
-        footer nav ul li a {
+        .footer-logo svg {
+            width: 24px;
+            height: 24px;
+            margin-right: 8px;
+        }
+
+        .social-links {
+            display: flex;
+            gap: 1rem;
+        }
+
+        .social-icon {
             color: var(--light);
             text-decoration: none;
+            transition: color 0.3s ease;
+        }
+
+        .social-icon:hover {
+            color: var(--primary);
         }
 
         @media (max-width: 768px) {
-            .feature-card, .step-card, .testimonial-card {
-                flex-basis: 100%;
+            nav ul {
+                display: none;
+            }
+            
+            .hero h1 {
+                font-size: 2rem;
+            }
+            
+            .hero p {
+                font-size: 1rem;
+            }
+            
+            .footer-content {
+                flex-direction: column;
+                gap: 1rem;
             }
         }
     </style>
-
-    <script>
-        document.getElementById('leadForm').addEventListener('submit', function(e) {
-            e.preventDefault();
-            alert('Thank you for your interest! We will be in touch shortly to schedule your demo.');
-            this.reset();
-        });
-    </script>
 </body>
 </html>
