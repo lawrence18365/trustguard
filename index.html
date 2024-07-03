@@ -101,7 +101,7 @@
         .hero {
             background-color: var(--secondary);
             color: var(--light);
-            padding: 100px 0 50px;
+            padding: 120px 0 70px;
             text-align: center;
         }
 
@@ -127,6 +127,45 @@
             margin-bottom: 2rem;
         }
 
+        .features, .steps, .testimonials {
+            display: flex;
+            flex-wrap: wrap;
+            justify-content: space-between;
+            gap: 2rem;
+        }
+
+        .feature-card, .step-card, .testimonial-card {
+            flex-basis: calc(33.333% - 1.33rem);
+            background-color: #fff;
+            padding: 2rem;
+            border-radius: 10px;
+            box-shadow: 0 4px 6px rgba(0,0,0,0.1);
+            transition: transform 0.3s ease, box-shadow 0.3s ease;
+        }
+
+        .feature-card:hover, .step-card:hover, .testimonial-card:hover {
+            transform: translateY(-5px);
+            box-shadow: 0 6px 12px rgba(0,0,0,0.15);
+        }
+
+        .feature-card h3, .step-card h3 {
+            color: var(--primary);
+            margin-bottom: 1rem;
+            font-size: 1.2rem;
+        }
+
+        .feature-card p, .step-card p, .testimonial-card p {
+            font-size: 0.9rem;
+        }
+
+        .testimonial-card cite {
+            display: block;
+            margin-top: 1rem;
+            font-style: normal;
+            font-weight: 600;
+            color: var(--primary);
+        }
+
         @media (max-width: 768px) {
             nav ul {
                 display: none;
@@ -136,6 +175,9 @@
             }
             .hero p {
                 font-size: 1rem;
+            }
+            .feature-card, .step-card, .testimonial-card {
+                flex-basis: 100%;
             }
         }
     </style>
@@ -171,7 +213,7 @@
         <section id="features">
             <div class="container">
                 <h2>What We Do</h2>
-<div class="features">
+                <div class="features">
                     <div class="feature-card">
                         <h3>Boost Reviews</h3>
                         <p>Automate the collection and management of positive reviews to enhance your online reputation.</p>
@@ -187,8 +229,7 @@
                 </div>
             </div>
         </section>
-
-        <section id="how-it-works">
+<section id="how-it-works">
             <div class="container">
                 <h2>How ReviewGate Works</h2>
                 <div class="steps">
@@ -254,45 +295,6 @@
     </footer>
 
     <style>
-        .features, .steps, .testimonials {
-            display: flex;
-            flex-wrap: wrap;
-            justify-content: space-between;
-            gap: 2rem;
-        }
-
-        .feature-card, .step-card, .testimonial-card {
-            flex-basis: calc(33.333% - 1.33rem);
-            background-color: #fff;
-            padding: 2rem;
-            border-radius: 10px;
-            box-shadow: 0 4px 6px rgba(0,0,0,0.1);
-            transition: transform 0.3s ease, box-shadow 0.3s ease;
-        }
-
-        .feature-card:hover, .step-card:hover, .testimonial-card:hover {
-            transform: translateY(-5px);
-            box-shadow: 0 6px 12px rgba(0,0,0,0.15);
-        }
-
-        .feature-card h3, .step-card h3 {
-            color: var(--primary);
-            margin-bottom: 1rem;
-            font-size: 1.2rem;
-        }
-
-        .feature-card p, .step-card p, .testimonial-card p {
-            font-size: 0.9rem;
-        }
-
-        .testimonial-card cite {
-            display: block;
-            margin-top: 1rem;
-            font-style: normal;
-            font-weight: 600;
-            color: var(--primary);
-        }
-
         form {
             display: flex;
             flex-direction: column;
